@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "origin",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ],
+    "type": "bearer"
+  },
+  "item": [
+    {
+      "name": "AccountService",
+      "item": [
+        {
+          "name": "createAccount",
+          "request": {
+            "description": "This API creates an Account for a User. There are two types of account can be created, PREPAID and LIMIT.",
+            "url": {
+              "raw": "{{origin}}/account",
+              "host": [
+                "{{origin}}"
+              ],
+              "path": [
+                "account"
+              ],
+              "query": []
+            },
+            "header": [
+              {
+                "key": "App-ID",
+                "description": "unique app ID, generated during app registration\neg: app_36c3e32a-dc18-11e8-89bd-0242ac130002\n",
+                "type": "text",
+                "value": "\"example\""
+              },
+              {
+                "key": "App-Token",
+                "description": "session token for App\neg: BO8SS05DS4Q9K1GRONRBP\n",
+                "type": "text",
+                "value": "\"example\""
+              },
+              {
+                "key": "Request-ID",
+                "description": "unique request ID for App\neg: 75ff8b82-bca8-11e8-a355-529269fb1459\n",
+                "type": "text",
+                "value": "\"example\""
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"0\": {\n    \"account_type\": \"PREPAID\"\n  },\n  \"1\": {\n    \"user_id\": \"example\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Successful createAccount",
+              "code": 200,
+              "originalRequest": {
+                "description": "This API creates an Account for a User. There are two types of account can be created, PREPAID and LIMIT.",
+                "url": {
+                  "raw": "{{origin}}/account",
+                  "host": [
+                    "{{origin}}"
+                  ],
+                  "path": [
+                    "account"
+                  ],
+                  "query": []
+                },
+                "header": [
+                  {
+                    "key": "App-ID",
+                    "description": "unique app ID, generated during app registration\neg: app_36c3e32a-dc18-11e8-89bd-0242ac130002\n",
+                    "type": "text",
+                    "value": "\"example\""
+                  },
+                  {
+                    "key": "App-Token",
+                    "description": "session token for App\neg: BO8SS05DS4Q9K1GRONRBP\n",
+                    "type": "text",
+                    "value": "\"example\""
+                  },
+                  {
+                    "key": "Request-ID",
+                    "description": "unique request ID for App\neg: 75ff8b82-bca8-11e8-a355-529269fb1459\n",
+                    "type": "text",
+                    "value": "\"example\""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"0\": {\n    \"account_type\": \"PREPAID\"\n  },\n  \"1\": {\n    \"user_id\": \"example\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "body": "{\n  \"0\": {\n    \"account_id\": \"example\"\n  },\n  \"1\": {\n    \"user_id\": \"example\"\n  }\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
